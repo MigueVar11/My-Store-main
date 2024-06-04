@@ -82,4 +82,20 @@ router.post('/:id/delete', (req, res) => {
   res.json({ message: 'Producto eliminado satisfactoriamente', data: deletedProduct });
 });
 
+// ACTUALIZAR EL NOMBRE DE UN PRODUCTO EXISTENTE
+router.post('/:id/name', (req, res) => {
+  const productId = req.params.id;
+  const newName = req.body.name;
+
+  const product = products.find(product => product.id == productId);
+
+  if (!product) {
+    res.status(404).json({ message: 'Producto no encontrado' });
+    return;
+  }
+
+  product.name = newName;
+  res.json({ message: 'Nombre del producto actualizado satisfactoriamente', data: product });
+});
+
 module.exports = router;
