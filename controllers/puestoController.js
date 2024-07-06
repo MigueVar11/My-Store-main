@@ -4,8 +4,8 @@ const Puesto = require('../models/puesto');
 let puestos = []; // Array para almacenar los puestos
 
 // CRUD
-function crearPuesto(idPuesto, idSala, idFila, numero, tipo) {
-    const nuevoPuesto = new Puesto(idPuesto, idSala, idFila, numero, tipo);
+function crearPuesto(idPuesto,idFila, numero, tipo){
+    const nuevoPuesto = new Puesto(idPuesto,idFila, numero, tipo);
     puestos.push(nuevoPuesto);
     return nuevoPuesto;
 }
@@ -21,10 +21,10 @@ function obtenerPuestoPorId(idPuesto) {
 }
 
 // Actualizar un puesto
-function actualizarPuesto(idPuesto, idSala, idFila, numero, tipo) {
+function actualizarPuesto(idPuesto,idFila, numero, tipo) {
     const index = puestos.findIndex(puesto => puesto.idPuesto === idPuesto);
     if (index !== -1) {
-        puestos[index] = new Puesto(idPuesto, idSala, idFila, numero, tipo);
+        puestos[index] = new Puesto(idPuesto,idFila, numero, tipo);
         return puestos[index];
     }
     return null;

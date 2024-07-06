@@ -4,8 +4,8 @@ const funcionController = require('../controllers/funcionController');
 
 // Rutas CRUD para Función
 router.post('/', (req, res) => {
-    const { idFuncion, idPelicula, idSala, fecha, hora, precioBoleta } = req.body;
-    const funcion = funcionController.crearFuncion(idFuncion, idPelicula, idSala, fecha, hora, precioBoleta);
+    const {idFuncion, idPelicula, fecha, hora, idVenta,idLocalidad } = req.body;
+    const funcion = funcionController.crearFuncion(idFuncion, idPelicula, fecha, hora, idVenta,idLocalidad);
     res.json(funcion);
 });
 
@@ -26,8 +26,8 @@ router.get('/:idFuncion', (req, res) => {
 
 router.put('/:idFuncion', (req, res) => {
     const idFuncion = req.params.idFuncion;
-    const { idPelicula, idSala, fecha, hora, precioBoleta } = req.body;
-    const funcion = funcionController.actualizarFuncion(idFuncion, idPelicula, idSala, fecha, hora, precioBoleta);
+    const { idPelicula, fecha, hora, idVenta,idLocalidad } = req.body;
+    const funcion = funcionController.actualizarFuncion(idFuncion, idPelicula, fecha, hora, idVenta,idLocalidad);
     if (funcion) {
         res.json(funcion);
     } else {

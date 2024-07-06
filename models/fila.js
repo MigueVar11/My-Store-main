@@ -1,8 +1,8 @@
 class Fila {
-  constructor(idFila, idSala, numeroFila) {
+  constructor(idFila, numeroFila,idLocalidad) {
       this.idFila = idFila;
-      this.idSala = idSala;
       this.numeroFila = numeroFila;
+      this.idLocalidad = idLocalidad;
   }
 }
 

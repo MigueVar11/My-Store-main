@@ -4,8 +4,8 @@ const filaController = require('../controllers/filaController');
 
 // Rutas CRUD fila
 router.post('/', (req, res) => {
-    const { idFila, idSala, numeroFila } = req.body;
-    const fila = filaController.crearFila(idFila, idSala, numeroFila);
+    const { idFila, numeroFila,idLocalidad} = req.body;
+    const fila = filaController.crearFila(idFila, numeroFila,idLocalidad);
     res.json(fila);
 });
 
@@ -26,8 +26,8 @@ router.get('/:idFila', (req, res) => {
 
 router.put('/:idFila', (req, res) => {
     const idFila = req.params.idFila;
-    const { idSala, numeroFila } = req.body;
-    const fila = filaController.actualizarFila(idFila, idSala, numeroFila);
+    const { numeroFila,idLocalidad } = req.body;
+    const fila = filaController.actualizarFila(idFila, numeroFila,idLocalidad);
     if (fila) {
         res.json(fila);
     } else {

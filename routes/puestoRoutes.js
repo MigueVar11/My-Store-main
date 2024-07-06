@@ -5,8 +5,8 @@ const puestoController = require('../controllers/puestoController');
 
 // Rutas CRUD para Puesto
 router.post('/', (req, res) => {
-    const { idPuesto, idSala, idFila, numero, tipo } = req.body;
-    const puesto = puestoController.crearPuesto(idPuesto, idSala, idFila, numero, tipo);
+    const { idPuesto,idFila, numero, tipo} = req.body;
+    const puesto = puestoController.crearPuesto(idPuesto,idFila, numero, tipo);
     res.json(puesto);
 });
 
@@ -27,8 +27,8 @@ router.get('/:idPuesto', (req, res) => {
 
 router.put('/:idPuesto', (req, res) => {
     const idPuesto = req.params.idPuesto;
-    const { idSala, idFila, numero, tipo } = req.body;
-    const puesto = puestoController.actualizarPuesto(idPuesto, idSala, idFila, numero, tipo);
+    const { idFila, numero, tipo } = req.body;
+    const puesto = puestoController.actualizarPuesto(idPuesto,idFila, numero, tipo);
     if (puesto) {
         res.json(puesto);
     } else {

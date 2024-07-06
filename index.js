@@ -28,9 +28,10 @@ app.use('/api/filas', filaRoutes);
 // 5- PUESTOS - CRUD
 const puestoRoutes = require('./routes/puestoRoutes');
 app.use('/api/puestos', puestoRoutes);
-//6-BOLETAS - CRUD
-const boletaRoutes = require('./routes/boletaRoutes');
-app.use('/api/boletas', boletaRoutes);
+
+//6 - CINE - CRUD
+const cineRoutes = require('./routes/cineRoutes');
+app.use('/api/cines', cineRoutes);
 
 //7-ClIENTES -CRUD
 const clienteRoutes = require('./routes/clienteRoutes');
@@ -40,16 +41,19 @@ app.use('/api/clientes', clienteRoutes);
 const taquilleroRoutes = require('./routes/taquilleroRoutes');
 app.use('/api/taquilleros', taquilleroRoutes);
 
-//-----PARA ENDPOINTS---------------
+// LOCALIDAD- CRUD
+const localidadRoutes = require('./routes/localidadRoutes');
+app.use('/api/localidades', localidadRoutes);
 
 //PARA VENTAS
 const ventaRoutes = require('./routes/ventaRoutes');
 app.use('/api/ventas', ventaRoutes);
 
+//-----PARA ENDPOINTS---------------
+
 //PARA REALIZAR LAS CONSULTAS
 const consultaRoutes = require('./routes/consultaRoutes');
 app.use('/api/consultas', consultaRoutes);
-
 //Para correr el en puerto :3002
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);

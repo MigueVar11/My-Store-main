@@ -1,32 +1,30 @@
-const funciones = require('../models/funcion');
-const boletos = require('../models/boleta');
-const clientes = require('../models/cliente'); //
+const { obtenerFunciones } = require('./funcionController');
 
-function consultarFuncionesPorPelicula(idPelicula) {
+
+function obtenerFuncionesPorPelicula(idPelicula) {
     return funciones.filter(funcion => funcion.idPelicula === idPelicula);
 }
 
-function consultarFuncionesPorSala(idSala) {
+function obtenerLocalidadesPorSala(idSala) {
+    return localidades.filter(localidad => localidad.idSala === idSala);
+}
+
+function obtenerFuncionesPorSala(idSala) {
     return funciones.filter(funcion => funcion.idSala === idSala);
 }
 
-function consultarBoletosPorFuncion(idFuncion) {
-    return boletos.filter(boleta => boleta.idFuncion === idFuncion);
+function obtenerVentasPorPuesto(idPuesto) {
+    return ventas.filter(venta => venta.idPuesto === idPuesto);
 }
 
-function consultarDisponibilidadDePuestos(idFuncion) {
-    const boletosFuncion = boletos.filter(boleta => boleta.idFuncion === idFuncion);
-    return boletosFuncion.map(boleta => boleta.idPuesto); // Devuelve los IDs de los puestos ocupados
-}
-
-function consultarHistorialDeCompras(idCliente) {
-    return boletos.filter(boleta => boleta.idCliente === idCliente);
+function obtenerPeliculasPorCine(idCine) {
+    return peliculas.filter(pelicula => pelicula.idCine === idCine);
 }
 
 module.exports = {
-    consultarFuncionesPorPelicula,
-    consultarFuncionesPorSala,
-    consultarBoletosPorFuncion,
-    consultarDisponibilidadDePuestos,
-    consultarHistorialDeCompras
+    obtenerFuncionesPorPelicula,
+    obtenerLocalidadesPorSala,
+    obtenerFuncionesPorSala,
+    obtenerVentasPorPuesto,
+    obtenerPeliculasPorCine
 };

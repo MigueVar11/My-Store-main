@@ -1,8 +1,10 @@
 class Venta {
-  constructor(idVenta, idBoleta, idTaquillero, fechaVenta) {
+  constructor(idVenta, idFuncion, idTaquillero, idCliente, idPuesto, fechaVenta) {
       this.idVenta = idVenta;
-      this.idBoleta = idBoleta;
+      this.idFuncion = idFuncion;
       this.idTaquillero = idTaquillero;
+      this.idCliente = idCliente;
+      this.idPuesto = idPuesto;
       this.fechaVenta = fechaVenta;
   }
 }

@@ -4,8 +4,8 @@ const taquilleroController = require('../controllers/taquilleroController');
 
 // Rutas CRUD
 router.post('/', (req, res) => {
-    const { idTaquillero, nombre, apellido, cedula } = req.body;
-    const taquillero = taquilleroController.crearTaquillero(idTaquillero, nombre, apellido, cedula);
+    const { idTaquillero, nombre, apellido, cedula,idCine } = req.body;
+    const taquillero = taquilleroController.crearTaquillero(idTaquillero, nombre, apellido, cedula,idCine) ;
     res.json(taquillero);
 });
 
@@ -26,8 +26,8 @@ router.get('/:idTaquillero', (req, res) => {
 
 router.put('/:idTaquillero', (req, res) => {
     const idTaquillero = req.params.idTaquillero;
-    const { nombre, apellido, cedula } = req.body;
-    const taquillero = taquilleroController.actualizarTaquillero(idTaquillero, nombre, apellido, cedula);
+    const { nombre, apellido, cedula,idCine } = req.body;
+    const taquillero = taquilleroController.actualizarTaquillero(idTaquillero, nombre, apellido, cedula,idCine);
     if (taquillero) {
         res.json(taquillero);
     } else {

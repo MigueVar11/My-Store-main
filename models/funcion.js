@@ -1,11 +1,11 @@
 class Funcion {
-  constructor(idFuncion, idPelicula, idSala, fecha, hora, precioBoleta) {
+  constructor(idFuncion, idPelicula, fecha, hora, idVenta,idLocalidad) {
       this.idFuncion = idFuncion;
       this.idPelicula = idPelicula;
-      this.idSala = idSala;
       this.fecha = fecha;
       this.hora = hora;
-      this.precioBoleta = precioBoleta;
+      this.idVenta = idVenta;
+      this.idLocalidad = idLocalidad;
   }
 }
 
